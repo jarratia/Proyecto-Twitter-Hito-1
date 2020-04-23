@@ -31,4 +31,10 @@
 
 <br>
 
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+  <%= paginate @tweets %>
+  </div>
+</div>
+
 <%= link_to 'New Tweet', new_tweet_path %>

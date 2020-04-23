@@ -6,6 +6,23 @@ GIT
     faker (2.11.0)
       i18n (>= 1.6, < 2)
 
+GIT
+  remote: https://github.com/kaminari/kaminari
+  revision: 04d86ed3f2537aff620941413e5fca254e87aebe
+  specs:
+    kaminari (1.2.0)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.0)
+      kaminari-activerecord (= 1.2.0)
+      kaminari-core (= 1.2.0)
+    kaminari-actionview (1.2.0)
+      actionview
+      kaminari-core (= 1.2.0)
+    kaminari-activerecord (1.2.0)
+      activerecord
+      kaminari-core (= 1.2.0)
+    kaminari-core (1.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -98,18 +115,6 @@ GEM
     io-like (0.3.1)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
-    kaminari (1.2.0)
-      activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.2.0)
-      kaminari-activerecord (= 1.2.0)
-      kaminari-core (= 1.2.0)
-    kaminari-actionview (1.2.0)
-      actionview
-      kaminari-core (= 1.2.0)
-    kaminari-activerecord (1.2.0)
-      activerecord
-      kaminari-core (= 1.2.0)
-    kaminari-core (1.2.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -233,7 +238,7 @@ DEPENDENCIES
   devise
   faker!
   jbuilder (~> 2.5)
-  kaminari
+  kaminari!
   listen (>= 3.0.5, < 3.2)
   pg
   puma (~> 3.11)
