@@ -4,13 +4,19 @@
     <title>Hito1ProyectoTwitter</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <!-- Agregando Bootstrap CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%= render 'shared/navbar' %>
+
     <div class="container">
       <% if notice.present? %>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -28,12 +34,6 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-      <% end %>
-
-      <% if current_user %>
-        <%= link_to('Log Out', destroy_user_session_path, method: :delete) %>
-      <% else %>
-        <%= link_to('Log In', new_user_session_path) %>
       <% end %>
 
       <%= yield %>
