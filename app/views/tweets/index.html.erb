@@ -19,12 +19,13 @@
       <tr>
         <td><%= tweet.content %></td>
         <td>
-        <p><%= tweet.likes.count %> <%= (tweet.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+        <p><%= link_to pluralize(tweet.likes.count, 'like'), tweet_likes_path(tweet), method: :post %></p>
         </td>
         <td><%= tweet.user %></td>
-        <td><%= link_to 'Show', tweet %></td>
+        
+        <!-- <td><%= link_to 'Show', tweet %></td>
         <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-        <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
       <% end %>
     </tbody>
