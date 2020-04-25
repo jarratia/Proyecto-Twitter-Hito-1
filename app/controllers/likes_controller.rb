@@ -3,7 +3,7 @@ class LikesController < ApplicationController
 
   def index
     @likes = Like.all(params[:tweet_id])
-  end
+  end 
 
   def create
     @tweet = Tweet.find(params[:tweet_id])

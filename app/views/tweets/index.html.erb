@@ -19,7 +19,7 @@
       <tr>
         <td><%= tweet.content %></td>
         <td>
-        <p><%= link_to pluralize(tweet.likes.count, 'like'), tweet_likes_path(tweet), method: :post %></p>
+        <p><%= link_to pluralize(tweet.likes.count, 'Like' ), tweet_likes_path(tweet), method: :post %></p>
         </td>
         <td><%= tweet.user %></td>
         
