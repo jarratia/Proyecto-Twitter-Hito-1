@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :set_tweet, only: [:show, :edit, :update, :destroy, :retweets]
 
   # GET /tweets
   # GET /tweets.json
@@ -22,7 +22,7 @@ class TweetsController < ApplicationController
   def edit
   end
 
-  # POST /tweets
+  # POST /tweets 
   # POST /tweets.json
   def create
     @tweet = current_user.tweets.build(tweet_params)
@@ -38,8 +38,11 @@ class TweetsController < ApplicationController
     end
   end
 
-  def retweet
-    
+  def retweets
+    retweet = Tweet.create(content: @tweet.content, user_id: @tweet.user_id, retweets: @tweet.id)
+     if retweet.save
+      redirect_to root_path, notice: 'Your Retweet was successfully published.'
+     end
   end
 
   # PATCH/PUT /tweets/1
